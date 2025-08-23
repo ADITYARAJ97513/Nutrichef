@@ -10,7 +10,7 @@
 
 ## 🚀 Live Demo
 
-🔗 [Click here to try NutriChef live](nutrichef-six.vercel.app)  
+🔗 [nutrichef-six.vercel.app ](https://nutrichef-six.vercel.app/)
 
 
 ---
