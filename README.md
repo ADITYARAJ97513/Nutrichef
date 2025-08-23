@@ -10,8 +10,8 @@
 
 ## 🚀 Live Demo
 
-🔗 [Click here to try NutriChef live](#)  
-*(Coming soon or add your deployed link here)*
+🔗 [Click here to try NutriChef live](nutrichef-six.vercel.app)  
+
 
 ---
 
