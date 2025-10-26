@@ -15,7 +15,6 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    
     try {
       await login(formData.email, formData.password);
     } catch (error) {
@@ -31,11 +30,19 @@ const Login = () => {
     });
   };
 
+  // Autofill demo credentials
+  const fillDemoCredentials = () => {
+    setFormData({
+      email: 'khushirice07@gmail.com',
+      password: 'Password',
+    });
+  };
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-md w-full space-y-8">
+      <div className="max-w-md w-full space-y-8 bg-white p-8 rounded-2xl shadow-lg">
         <div>
-          <h2 className="mt-6 text-center text-3xl font-bold text-gray-900">
+          <h2 className="text-center text-3xl font-bold text-gray-900">
             Sign in to your account
           </h2>
           <p className="mt-2 text-center text-sm text-gray-600">
@@ -48,8 +55,22 @@ const Login = () => {
             </Link>
           </p>
         </div>
-        
-        <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
+
+        {/* --- DEMO CREDENTIALS BOX --- */}
+        <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 text-sm text-gray-700">
+          <p className="font-semibold mb-1 text-blue-800">Demo Credentials</p>
+          <p>Email: <span className="font-medium">khushirice07@gmail.com</span></p>
+          <p>Password: <span className="font-medium">Password</span></p>
+          <button
+            onClick={fillDemoCredentials}
+            type="button"
+            className="mt-2 text-blue-600 hover:text-blue-800 text-sm font-medium underline"
+          >
+            Use Demo Credentials
+          </button>
+        </div>
+
+        <form className="mt-6 space-y-6" onSubmit={handleSubmit}>
           <div className="space-y-4">
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-gray-700">
@@ -114,13 +135,11 @@ const Login = () => {
           </div>
 
           <div className="text-sm text-center">
-            {/* --- THIS IS THE FIX --- */}
             <Link to="/forgot-password" className="font-medium text-primary-600 hover:text-primary-500">
               Forgot your password?
             </Link>
           </div>
         </form>
-
       </div>
     </div>
   );
